@@ -195,7 +195,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -205,7 +205,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            Kategorien
           </a>
         </li>
       
@@ -215,7 +215,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            About
+            Über
           </a>
         </li>
       
@@ -225,7 +225,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -305,7 +305,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-10T16:14:20+08:00">
                 2017-06-10
@@ -376,11 +376,11 @@ Percentage of individuals making more than $50,000: 24.78%
 <h3 id="转换倾斜的连续特征"><a href="#转换倾斜的连续特征" class="headerlink" title="转换倾斜的连续特征"></a>转换倾斜的连续特征</h3><p>一个数据集有时可能包含至少一个靠近某个数字的特征，但有时也会有一些相对来说存在极大值或者极小值的不平凡分布的的特征。算法对这种分布的数据会十分敏感，并且如果这种数据没有能够很好地规一化处理会使得算法表现不佳。在人口普查数据集的两个特征符合这个描述：’<code>capital-gain&#39;</code>和<code>&#39;capital-loss&#39;</code>。</p>
 <p>运行下面的代码单元以创建一个关于这两个特征的条形图。请注意当前的值的范围和它们是如何分布的。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 将数据切分成特征和对应的标签</span></div><div class="line">income_raw = data[<span class="string">'income'</span>]</div><div class="line">features_raw = data.drop(<span class="string">'income'</span>, axis = <span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="comment"># 可视化原来数据的倾斜的连续特征</span></div><div class="line">vs.distribution(data)</div></pre></td></tr></table></figure>
-<p><img src="/image/find_donors_1.png" alt="png" title="第一张图片"></p>
+<p><img src="https://ooo.0o0.ooo/2017/06/10/593bb5de341f5.png" alt=""></p>
 <p>对于高度倾斜分布的特征如<code>&#39;capital-gain&#39;</code>和<code>&#39;capital-loss&#39;</code>，常见的做法是对数据施加一个<a href="https://en.wikipedia.org/wiki/Data_transformation_(statistics)" target="_blank" rel="external">对数转换</a>，将数据转换成对数，这样非常大和非常小的值不会对学习算法产生负面的影响。并且使用对数变换显著降低了由于异常值所造成的数据范围异常。但是在应用这个变换时必须小心：因为0的对数是没有定义的，所以我们必须先将数据处理成一个比0稍微大一点的数以成功完成对数转换。</p>
 <p>运行下面的代码单元来执行数据的转换和可视化结果。再次，注意值的范围和它们是如何分布的。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 对于倾斜的数据使用Log转换</span></div><div class="line">skewed = [<span class="string">'capital-gain'</span>, <span class="string">'capital-loss'</span>]</div><div class="line">features_raw[skewed] = data[skewed].apply(<span class="keyword">lambda</span> x: np.log(x + <span class="number">1</span>))</div><div class="line"></div><div class="line"><span class="comment"># 可视化经过log之后的数据分布</span></div><div class="line">vs.distribution(features_raw, transformed = <span class="keyword">True</span>)</div></pre></td></tr></table></figure>
-<p><img src="output_11_0.png" alt="png"></p>
+<p><img src="https://ooo.0o0.ooo/2017/06/10/593bb6fc3d3f7.png" alt="png"></p>
 <h3 id="规一化数字特征"><a href="#规一化数字特征" class="headerlink" title="规一化数字特征"></a>规一化数字特征</h3><p>除了对于高度倾斜的特征施加转换，对数值特征施加一些形式的缩放通常会是一个好的习惯。在数据上面施加一个缩放并不会改变数据分布的形式（比如上面说的’capital-gain’ or ‘capital-loss’）；但是，规一化保证了每一个特征在使用监督学习器的时候能够被平等的对待。注意一旦使用了缩放，观察数据的原始形式不再具有它本来的意义了，就像下面的例子展示的。</p>
 <p>运行下面的代码单元来规一化每一个数字特征。我们将使用<a href="http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html" target="_blank" rel="external"><code>sklearn.preprocessing.MinMaxScaler</code></a>来完成这个任务。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 导入sklearn.preprocessing.StandardScaler</span></div><div class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> MinMaxScaler</div><div class="line"></div><div class="line"><span class="comment"># 初始化一个 scaler，并将它施加到特征上</span></div><div class="line">scaler = MinMaxScaler()</div><div class="line">numerical = [<span class="string">'age'</span>, <span class="string">'education-num'</span>, <span class="string">'capital-gain'</span>, <span class="string">'capital-loss'</span>, <span class="string">'hours-per-week'</span>]</div><div class="line">features_raw[numerical] = scaler.fit_transform(data[numerical])</div><div class="line"></div><div class="line"><span class="comment"># 显示一个经过缩放的样例记录</span></div><div class="line">display(features_raw.head(n = <span class="number">1</span>))</div></pre></td></tr></table></figure>
@@ -667,7 +667,7 @@ SVC trained on 36177 samples.
 AdaBoostClassifier trained on 361 samples.
 AdaBoostClassifier trained on 3617 samples.
 AdaBoostClassifier trained on 36177 samples.
-</code></pre><p><img src="output_28_3.png" alt="png"></p>
+</code></pre><p><img src="https://ooo.0o0.ooo/2017/06/10/593bb73fcb75e.png" alt="png"></p>
 <hr>
 <h2 id="提高效果"><a href="#提高效果" class="headerlink" title="提高效果"></a>提高效果</h2><p>在这最后一节中，您将从三个有监督的学习模型中选择<em>最好的</em>模型来使用学生数据。你将在整个训练集（<code>X_train</code>和<code>y_train</code>）上通过使用网格搜索优化至少调节一个参数以获得一个比没有调节之前更好的F-score。</p>
 <h3 id="问题-3-选择最佳的模型"><a href="#问题-3-选择最佳的模型" class="headerlink" title="问题 3 - 选择最佳的模型"></a>问题 3 - 选择最佳的模型</h3><p><em>基于你前面做的评价，用一到两段向</em>CharityML<em>解释这三个模型中哪一个对于判断被调查者的年收入大于\$50,000是最合适的。</em><br><strong>提示：</strong>你的答案应该包括关于评价指标，预测/训练时间，以及该算法是否适合这里的数据的讨论。</p>
@@ -758,8 +758,8 @@ Final F-score on the testing data: 0.7396
 <li>使用模型中的<code>&#39;.feature_importances_&#39;</code>提取特征的重要性。</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># TODO：导入一个有'feature_importances_'的监督学习模型</span></div><div class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</div><div class="line"></div><div class="line"><span class="comment"># TODO：在训练集上训练一个监督学习模型</span></div><div class="line">model = RandomForestClassifier(random_state=<span class="number">0</span>)</div><div class="line">model.fit(X_train, y_train)</div><div class="line"></div><div class="line"><span class="comment"># TODO： 提取特征重要性</span></div><div class="line">importances = model.feature_importances_</div><div class="line">importances_AdaBoost = best_clf.feature_importances_</div><div class="line"><span class="comment"># 绘图</span></div><div class="line">vs.feature_plot(importances, X_train, y_train)</div><div class="line">vs.feature_plot(importances_AdaBoost, X_train, y_train)</div></pre></td></tr></table></figure>
-<p><img src="output_43_0.png" alt="png"></p>
-<p><img src="output_43_1.png" alt="png"></p>
+<p><img src="https://ooo.0o0.ooo/2017/06/10/593bb754af8e7.png" alt="png"></p>
+<p><img src="https://ooo.0o0.ooo/2017/06/10/593bb760bcbbd.png" alt="png"></p>
 <h3 id="问题-7-提取特征重要性"><a href="#问题-7-提取特征重要性" class="headerlink" title="问题 7 - 提取特征重要性"></a>问题 7 - 提取特征重要性</h3><p>观察上面创建的展示五个用于预测被调查者年收入是否大于\$50,000最相关的特征的可视化图像。<br><em>这五个特征和你在<strong>问题 6</strong>中讨论的特征比较怎么样？如果说你的答案和这里的相近，那么这个可视化怎样佐证了你的想法？如果你的选择不相近，那么为什么你觉得这些特征更加相关？</em></p>
 <p><strong>回答：</strong><br>与<code>问题6</code>中的答案有部分是相近的，例如：年龄、教育程度、工作时长。  </p>
 <pre><code>- 年龄：随着年龄的增长，工作经验的增加，收入自然会不断增长；
@@ -865,7 +865,7 @@ F-score on testing data: 0.6920
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-13T18:22:09+08:00">
                 2017-04-13
@@ -985,7 +985,7 @@ F-score on testing data: 0.6920
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-13T17:01:39+08:00">
                 2017-04-13
@@ -1114,7 +1114,7 @@ F-score on testing data: 0.6920
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -1168,7 +1168,7 @@ F-score on testing data: 0.6920
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
