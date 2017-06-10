@@ -95,16 +95,16 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/10/finding_donors/index.html">
 <meta property="og:site_name" content="Sha0k">
 <meta property="og:description" content="机器学习纳米学位监督学习项目2: 为CharityML寻找捐献者欢迎来到机器学习工程师纳米学位的第二个项目！在此文件中，有些示例代码已经提供给你，但你还需要实现更多的功能让项目成功运行。除非有明确要求，你无须修改任何已给出的代码。以‘练习’开始的标题表示接下来的代码部分中有你必须要实现的功能。每一部分都会有详细的指导，需要实现的部分也会在注释中以’TODO’标出。请仔细阅读所有的提示！ 除了实现代">
-<meta property="og:image" content="http://yoursite.com/2017/06/10/finding_donors/output_9_0.png">
+<meta property="og:image" content="http://yoursite.com/image/find_donors_1.png">
 <meta property="og:image" content="http://yoursite.com/2017/06/10/finding_donors/output_11_0.png">
 <meta property="og:image" content="http://yoursite.com/2017/06/10/finding_donors/output_28_3.png">
 <meta property="og:image" content="http://yoursite.com/2017/06/10/finding_donors/output_43_0.png">
 <meta property="og:image" content="http://yoursite.com/2017/06/10/finding_donors/output_43_1.png">
-<meta property="og:updated_time" content="2017-06-10T08:17:00.000Z">
+<meta property="og:updated_time" content="2017-06-10T09:01:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为*CharityML*寻找捐献者">
 <meta name="twitter:description" content="机器学习纳米学位监督学习项目2: 为CharityML寻找捐献者欢迎来到机器学习工程师纳米学位的第二个项目！在此文件中，有些示例代码已经提供给你，但你还需要实现更多的功能让项目成功运行。除非有明确要求，你无须修改任何已给出的代码。以‘练习’开始的标题表示接下来的代码部分中有你必须要实现的功能。每一部分都会有详细的指导，需要实现的部分也会在注释中以’TODO’标出。请仔细阅读所有的提示！ 除了实现代">
-<meta name="twitter:image" content="http://yoursite.com/2017/06/10/finding_donors/output_9_0.png">
+<meta name="twitter:image" content="http://yoursite.com/image/find_donors_1.png">
 
 
 
@@ -204,7 +204,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -214,7 +214,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -224,7 +224,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            About
           </a>
         </li>
       
@@ -234,7 +234,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -311,7 +311,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-10T16:14:20+08:00">
                 2017-06-10
@@ -380,7 +380,7 @@ Percentage of individuals making more than $50,000: 24.78%
 <h3 id="转换倾斜的连续特征"><a href="#转换倾斜的连续特征" class="headerlink" title="转换倾斜的连续特征"></a>转换倾斜的连续特征</h3><p>一个数据集有时可能包含至少一个靠近某个数字的特征，但有时也会有一些相对来说存在极大值或者极小值的不平凡分布的的特征。算法对这种分布的数据会十分敏感，并且如果这种数据没有能够很好地规一化处理会使得算法表现不佳。在人口普查数据集的两个特征符合这个描述：’<code>capital-gain&#39;</code>和<code>&#39;capital-loss&#39;</code>。</p>
 <p>运行下面的代码单元以创建一个关于这两个特征的条形图。请注意当前的值的范围和它们是如何分布的。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 将数据切分成特征和对应的标签</span></div><div class="line">income_raw = data[<span class="string">'income'</span>]</div><div class="line">features_raw = data.drop(<span class="string">'income'</span>, axis = <span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="comment"># 可视化原来数据的倾斜的连续特征</span></div><div class="line">vs.distribution(data)</div></pre></td></tr></table></figure>
-<p><img src="output_9_0.png" alt="png"></p>
+<p><img src="/image/find_donors_1.png" alt="png" title="第一张图片"></p>
 <p>对于高度倾斜分布的特征如<code>&#39;capital-gain&#39;</code>和<code>&#39;capital-loss&#39;</code>，常见的做法是对数据施加一个<a href="https://en.wikipedia.org/wiki/Data_transformation_(statistics)" target="_blank" rel="external">对数转换</a>，将数据转换成对数，这样非常大和非常小的值不会对学习算法产生负面的影响。并且使用对数变换显著降低了由于异常值所造成的数据范围异常。但是在应用这个变换时必须小心：因为0的对数是没有定义的，所以我们必须先将数据处理成一个比0稍微大一点的数以成功完成对数转换。</p>
 <p>运行下面的代码单元来执行数据的转换和可视化结果。再次，注意值的范围和它们是如何分布的。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 对于倾斜的数据使用Log转换</span></div><div class="line">skewed = [<span class="string">'capital-gain'</span>, <span class="string">'capital-loss'</span>]</div><div class="line">features_raw[skewed] = data[skewed].apply(<span class="keyword">lambda</span> x: np.log(x + <span class="number">1</span>))</div><div class="line"></div><div class="line"><span class="comment"># 可视化经过log之后的数据分布</span></div><div class="line">vs.distribution(features_raw, transformed = <span class="keyword">True</span>)</div></pre></td></tr></table></figure>
@@ -882,10 +882,10 @@ F-score on testing data: 0.6920
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -906,7 +906,7 @@ F-score on testing data: 0.6920
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -976,7 +976,7 @@ F-score on testing data: 0.6920
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
