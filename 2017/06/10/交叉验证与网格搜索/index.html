@@ -135,17 +135,8 @@
 
 
 
-  <title>
-  
-
-  
-    交叉验证与网格搜索 | Sha0k
-  
-</title>
+  <title> 交叉验证与网格搜索 | Sha0k </title>
 </head>
-<!-- 添加 -->
-
-
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
@@ -168,7 +159,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -273,17 +264,92 @@
             
 
   <div id="posts" class="posts-expand">
-  <header class="post-header">
+    
 
-	<h1 class="post-title" itemprop="name headline">交叉验证与网格搜索</h1>
+  
 
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/10/交叉验证与网格搜索/">
 
-</header>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yuyang Sha">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sha0k">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                交叉验证与网格搜索
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-10T21:02:30+08:00">
+                2017-06-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+
+
+
+
+          
+
+          
+
+        </div>
+      </header>
     
-      <a id="more"></a>
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
 <h2 id="交叉验证与网格搜索"><a href="#交叉验证与网格搜索" class="headerlink" title="交叉验证与网格搜索"></a>交叉验证与网格搜索</h2><p>交叉验证与网格搜索是机器学习中的两个非常重要且基本的概念，但是这两个概念在刚入门的时候并不是非常容易理解与掌握，自己开始学习的时候，对这两个概念理解的并不到位，现在写一篇关于<strong>交叉验证与网格搜索</strong>的文章，将这两个基本的概念做一下梳理。</p>
 <h3 id="网格搜索"><a href="#网格搜索" class="headerlink" title="网格搜索"></a>网格搜索</h3><p>网格搜索（Grid Search）名字非常大气，但是用简答的话来说就是你手动的给出一个模型中你想要改动的所用的参数，程序自动的帮你使用穷举法来将所用的参数都运行一遍。<strong>决策树</strong>中我们常常将最大树深作为需要调节的参数；<strong>AdaBoost</strong>中将弱分类器的数量作为需要调节的参数。</p>
 <h3 id="评分方法"><a href="#评分方法" class="headerlink" title="评分方法"></a>评分方法</h3><p>为了确定搜索参数，也就是手动设定的调节的变量的值中，那个是最好的，这时就需要使用一个比较理想的评分方式（这个评分方式是根据实际情况来确定的可能是accuracy、f1-score、f-beta、pricise、recall等）</p>
@@ -298,7 +364,65 @@
 </code></pre><div><br><style><br>    .dataframe thead tr:only-child th {<br>        text-align: right;<br>    }<br><br>    .dataframe thead th {<br>        text-align: left;<br>    }<br><br>    .dataframe tbody tr th {<br>        vertical-align: top;<br>    }<br></style><br><table border="1" class="dataframe"><br>  <thead><br>    <tr style="text-align: right;"><br>      <th></th><br>      <th>0</th><br>      <th>1</th><br>      <th>2</th><br>      <th>3</th><br>      <th>4</th><br>      <th>5</th><br>      <th>6</th><br>      <th>7</th><br>      <th>8</th><br>    </tr><br>  </thead><br>  <tbody><br>    <tr><br>      <th>mean_fit_time</th><br>      <td>0.0562535</td><br>      <td>0.0692133</td><br>      <td>0.0885126</td><br>      <td>0.110233</td><br>      <td>0.128337</td><br>      <td>0.158719</td><br>      <td>0.17124</td><br>      <td>0.193637</td><br>      <td>0.223979</td><br>    </tr><br>    <tr><br>      <th>mean_score_time</th><br>      <td>0.00240474</td><br>      <td>0.00228212</td><br>      <td>0.00221529</td><br>      <td>0.0026047</td><br>      <td>0.00226772</td><br>      <td>0.00254297</td><br>      <td>0.00231481</td><br>      <td>0.00246696</td><br>      <td>0.00256622</td><br>    </tr><br>    <tr><br>      <th>mean_test_score</th><br>      <td>0.75114</td><br>      <td>0.823811</td><br>      <td>0.839345</td><br>      <td>0.839926</td><br>      <td>0.846671</td><br>      <td>0.852392</td><br>      <td>0.851508</td><br>      <td>0.853139</td><br>      <td>0.855737</td><br>    </tr><br>    <tr><br>      <th>mean_train_score</th><br>      <td>0.75114</td><br>      <td>0.82421</td><br>      <td>0.839628</td><br>      <td>0.840503</td><br>      <td>0.847878</td><br>      <td>0.853329</td><br>      <td>0.855264</td><br>      <td>0.859202</td><br>      <td>0.863667</td><br>    </tr><br>    <tr><br>      <th>param_max_depth</th><br>      <td>1</td><br>      <td>2</td><br>      <td>3</td><br>      <td>4</td><br>      <td>5</td><br>      <td>6</td><br>      <td>7</td><br>      <td>8</td><br>      <td>9</td><br>    </tr><br>    <tr><br>      <th>params</th><br>      <td>{u’max_depth’: 1}</td><br>      <td>{u’max_depth’: 2}</td><br>      <td>{u’max_depth’: 3}</td><br>      <td>{u’max_depth’: 4}</td><br>      <td>{u’max_depth’: 5}</td><br>      <td>{u’max_depth’: 6}</td><br>      <td>{u’max_depth’: 7}</td><br>      <td>{u’max_depth’: 8}</td><br>      <td>{u’max_depth’: 9}</td><br>    </tr><br>    <tr><br>      <th>rank_test_score</th><br>      <td>9</td><br>      <td>8</td><br>      <td>7</td><br>      <td>6</td><br>      <td>5</td><br>      <td>3</td><br>      <td>4</td><br>      <td>2</td><br>      <td>1</td><br>    </tr><br>    <tr><br>      <th>split0_test_score</th><br>      <td>0.760641</td><br>      <td>0.8267</td><br>      <td>0.843836</td><br>      <td>0.844666</td><br>      <td>0.851575</td><br>      <td>0.855721</td><br>      <td>0.855445</td><br>      <td>0.86042</td><br>      <td>0.859038</td><br>    </tr><br>    <tr><br>      <th>split0_train_score</th><br>      <td>0.750084</td><br>      <td>0.823828</td><br>      <td>0.839184</td><br>      <td>0.83943</td><br>      <td>0.847538</td><br>      <td>0.852913</td><br>      <td>0.854295</td><br>      <td>0.859947</td><br>      <td>0.863233</td><br>    </tr><br>    <tr><br>      <th>split1_test_score</th><br>      <td>0.758154</td><br>      <td>0.821172</td><br>      <td>0.839138</td><br>      <td>0.842454</td><br>      <td>0.845218</td><br>      <td>0.849641</td><br>      <td>0.847706</td><br>      <td>0.850746</td><br>      <td>0.852957</td><br>    </tr><br>    <tr><br>      <th>split1_train_score</th><br>      <td>0.750361</td><br>      <td>0.824442</td><br>      <td>0.839706</td><br>      <td>0.845911</td><br>      <td>0.850088</td><br>      <td>0.854203</td><br>      <td>0.855831</td><br>      <td>0.861482</td><br>      <td>0.864984</td><br>    </tr><br>    <tr><br>      <th>split2_test_score</th><br>      <td>0.754837</td><br>      <td>0.824212</td><br>      <td>0.840243</td><br>      <td>0.84052</td><br>      <td>0.8466</td><br>      <td>0.854616</td><br>      <td>0.854339</td><br>      <td>0.854063</td><br>      <td>0.856551</td><br>    </tr><br>    <tr><br>      <th>split2_train_score</th><br>      <td>0.750729</td><br>      <td>0.824718</td><br>      <td>0.839031</td><br>      <td>0.839307</td><br>      <td>0.847323</td><br>      <td>0.852237</td><br>      <td>0.854203</td><br>      <td>0.859578</td><br>      <td>0.86397</td><br>    </tr><br>    <tr><br>      <th>split3_test_score</th><br>      <td>0.73162</td><br>      <td>0.820619</td><br>      <td>0.838032</td><br>      <td>0.838308</td><br>      <td>0.8466</td><br>      <td>0.850746</td><br>      <td>0.848535</td><br>      <td>0.846877</td><br>      <td>0.852957</td><br>    </tr><br>    <tr><br>      <th>split3_train_score</th><br>      <td>0.753309</td><br>      <td>0.824503</td><br>      <td>0.839829</td><br>      <td>0.840106</td><br>      <td>0.848337</td><br>      <td>0.853742</td><br>      <td>0.85537</td><br>      <td>0.858104</td><br>      <td>0.863171</td><br>    </tr><br>    <tr><br>      <th>split4_test_score</th><br>      <td>0.746545</td><br>      <td>0.818684</td><br>      <td>0.83361</td><br>      <td>0.833886</td><br>      <td>0.83969</td><br>      <td>0.847982</td><br>      <td>0.845495</td><br>      <td>0.85047</td><br>      <td>0.848811</td><br>    </tr><br>    <tr><br>      <th>split4_train_score</th><br>      <td>0.751651</td><br>      <td>0.824718</td><br>      <td>0.840321</td><br>      <td>0.840597</td><br>      <td>0.844897</td><br>      <td>0.853558</td><br>      <td>0.858319</td><br>      <td>0.861912</td><br>      <td>0.864922</td><br>    </tr><br>    <tr><br>      <th>split5_test_score</th><br>      <td>0.754284</td><br>      <td>0.826147</td><br>      <td>0.844942</td><br>      <td>0.845218</td><br>      <td>0.854063</td><br>      <td>0.859038</td><br>      <td>0.85738</td><br>      <td>0.858209</td><br>      <td>0.861802</td><br>    </tr><br>    <tr><br>      <th>split5_train_score</th><br>      <td>0.750791</td><br>      <td>0.823889</td><br>      <td>0.839061</td><br>      <td>0.839338</td><br>      <td>0.847323</td><br>      <td>0.852729</td><br>      <td>0.854111</td><br>      <td>0.856967</td><br>      <td>0.862741</td><br>    </tr><br>    <tr><br>      <th>split6_test_score</th><br>      <td>0.754284</td><br>      <td>0.825318</td><br>      <td>0.838032</td><br>      <td>0.837756</td><br>      <td>0.845495</td><br>      <td>0.848535</td><br>      <td>0.848535</td><br>      <td>0.852128</td><br>      <td>0.857103</td><br>    </tr><br>    <tr><br>      <th>split6_train_score</th><br>      <td>0.750791</td><br>      <td>0.823981</td><br>      <td>0.839829</td><br>      <td>0.840167</td><br>      <td>0.848429</td><br>      <td>0.853773</td><br>      <td>0.855647</td><br>      <td>0.857766</td><br>      <td>0.863141</td><br>    </tr><br>    <tr><br>      <th>split7_test_score</th><br>      <td>0.749793</td><br>      <td>0.821399</td><br>      <td>0.835499</td><br>      <td>0.835499</td><br>      <td>0.844623</td><br>      <td>0.85264</td><br>      <td>0.852087</td><br>      <td>0.853746</td><br>      <td>0.85264</td><br>    </tr><br>    <tr><br>      <th>split7_train_score</th><br>      <td>0.75129</td><br>      <td>0.824416</td><br>      <td>0.840111</td><br>      <td>0.840418</td><br>      <td>0.848372</td><br>      <td>0.853501</td><br>      <td>0.854945</td><br>      <td>0.860811</td><br>      <td>0.863882</td><br>    </tr><br>    <tr><br>      <th>split8_test_score</th><br>      <td>0.753387</td><br>      <td>0.826375</td><br>      <td>0.838264</td><br>      <td>0.83854</td><br>      <td>0.84407</td><br>      <td>0.852087</td><br>      <td>0.852917</td><br>      <td>0.852364</td><br>      <td>0.858446</td><br>    </tr><br>    <tr><br>      <th>split8_train_score</th><br>      <td>0.750891</td><br>      <td>0.823864</td><br>      <td>0.839803</td><br>      <td>0.84008</td><br>      <td>0.848372</td><br>      <td>0.853071</td><br>      <td>0.854945</td><br>      <td>0.857801</td><br>      <td>0.863391</td><br>    </tr><br>    <tr><br>      <th>split9_test_score</th><br>      <td>0.747857</td><br>      <td>0.827481</td><br>      <td>0.841858</td><br>      <td>0.842411</td><br>      <td>0.84877</td><br>      <td>0.852917</td><br>      <td>0.85264</td><br>      <td>0.852364</td><br>      <td>0.857064</td><br>    </tr><br>    <tr><br>      <th>split9_train_score</th><br>      <td>0.751505</td><br>      <td>0.823741</td><br>      <td>0.839404</td><br>      <td>0.839681</td><br>      <td>0.848096</td><br>      <td>0.853563</td><br>      <td>0.854975</td><br>      <td>0.857647</td><br>      <td>0.863237</td><br>    </tr><br>    <tr><br>      <th>std_fit_time</th><br>      <td>0.0123583</td><br>      <td>0.00442788</td><br>      <td>0.00552026</td><br>      <td>0.00631691</td><br>      <td>0.0053195</td><br>      <td>0.0157011</td><br>      <td>0.00476991</td><br>      <td>0.00622854</td><br>      <td>0.0147429</td><br>    </tr><br>    <tr><br>      <th>std_score_time</th><br>      <td>0.000529214</td><br>      <td>0.000467091</td><br>      <td>0.000355028</td><br>      <td>0.000760624</td><br>      <td>0.000460829</td><br>      <td>0.000504627</td><br>      <td>0.000446289</td><br>      <td>0.000445256</td><br>      <td>0.000449312</td><br>    </tr><br>    <tr><br>      <th>std_test_score</th><br>      <td>0.00769898</td><br>      <td>0.00292464</td><br>      <td>0.00333118</td><br>      <td>0.00358776</td><br>      <td>0.00382496</td><br>      <td>0.00324406</td><br>      <td>0.00360414</td><br>      <td>0.00366389</td><br>      <td>0.00363761</td><br>    </tr><br>    <tr><br>      <th>std_train_score</th><br>      <td>0.000855482</td><br>      <td>0.000366166</td><br>      <td>0.000418973</td><br>      <td>0.00185264</td><br>      <td>0.00124698</td><br>      <td>0.000553171</td><br>      <td>0.00116151</td><br>      <td>0.00168732</td><br>      <td>0.000726325</td><br>    </tr><br>  </tbody><br></table><br></div>
 
 
-    
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/10/finding_donors/" rel="prev" title="为CharityML寻找捐献者">
+                为CharityML寻找捐献者 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -330,8 +454,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -376,6 +509,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#交叉验证与网格搜索"><span class="nav-number">1.</span> <span class="nav-text">交叉验证与网格搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网格搜索"><span class="nav-number">1.1.</span> <span class="nav-text">网格搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评分方法"><span class="nav-number">1.2.</span> <span class="nav-text">评分方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交叉验证"><span class="nav-number">1.3.</span> <span class="nav-text">交叉验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举例"><span class="nav-number">1.4.</span> <span class="nav-text">举例</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -389,21 +538,13 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-<div class="copyright" >
+        <div class="copyright" >
 <div class="copyright" >
   
   &copy;  2016 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
-  </span>
-  <span id="busuanzi_container_site_pv">
-    本站总访问量<span id="busuanzi_value_site_pv"></span>次
-</span>
-  <span id="busuanzi_container_site_uv">
-  本站访客数<span id="busuanzi_value_site_uv"></span>人次
   </span>
   <span class="author" itemprop="copyrightHolder">Yuyang Sha</span>
 </div>
@@ -493,6 +634,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
