@@ -1,0 +1,987 @@
+
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hello Sha0k" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="机器学习纳米学位监督学习项目2: 为CharityML寻找捐献者欢迎来到机器学习工程师纳米学位的第二个项目！在此文件中，有些示例代码已经提供给你，但你还需要实现更多的功能让项目成功运行。除非有明确要求，你无须修改任何已给出的代码。以‘练习’开始的标题表示接下来的代码部分中有你必须要实现的功能。每一部分都会有详细的指导，需要实现的部分也会在注释中以’TODO’标出。请仔细阅读所有的提示！ 除了实现">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为CharityML寻找捐献者">
+<meta property="og:url" content="http://yoursite.com/2017/06/10/finding_donors/index.html">
+<meta property="og:site_name" content="Sha0k">
+<meta property="og:description" content="机器学习纳米学位监督学习项目2: 为CharityML寻找捐献者欢迎来到机器学习工程师纳米学位的第二个项目！在此文件中，有些示例代码已经提供给你，但你还需要实现更多的功能让项目成功运行。除非有明确要求，你无须修改任何已给出的代码。以‘练习’开始的标题表示接下来的代码部分中有你必须要实现的功能。每一部分都会有详细的指导，需要实现的部分也会在注释中以’TODO’标出。请仔细阅读所有的提示！ 除了实现">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/06/10/593bb5de341f5.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/06/10/593bb6fc3d3f7.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/06/10/593bb73fcb75e.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/06/10/593bb754af8e7.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/06/10/593bb760bcbbd.png">
+<meta property="og:updated_time" content="2017-06-10T09:23:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="为CharityML寻找捐献者">
+<meta name="twitter:description" content="机器学习纳米学位监督学习项目2: 为CharityML寻找捐献者欢迎来到机器学习工程师纳米学位的第二个项目！在此文件中，有些示例代码已经提供给你，但你还需要实现更多的功能让项目成功运行。除非有明确要求，你无须修改任何已给出的代码。以‘练习’开始的标题表示接下来的代码部分中有你必须要实现的功能。每一部分都会有详细的指导，需要实现的部分也会在注释中以’TODO’标出。请仔细阅读所有的提示！ 除了实现">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/06/10/593bb5de341f5.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/10/finding_donors/"/>
+
+
+
+
+
+  <title>
+  
+
+  
+    为CharityML寻找捐献者 | Sha0k
+  
+</title>
+</head>
+<!-- 添加 -->
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sha0k</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+  <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline">为CharityML寻找捐献者</h1>
+
+
+
+</header>
+
+    
+    
+      <a id="more"></a>
+<h1 id="机器学习纳米学位"><a href="#机器学习纳米学位" class="headerlink" title="机器学习纳米学位"></a>机器学习纳米学位</h1><h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><h2 id="项目2-为CharityML寻找捐献者"><a href="#项目2-为CharityML寻找捐献者" class="headerlink" title="项目2: 为CharityML寻找捐献者"></a>项目2: 为<em>CharityML</em>寻找捐献者</h2><p>欢迎来到机器学习工程师纳米学位的第二个项目！在此文件中，有些示例代码已经提供给你，但你还需要实现更多的功能让项目成功运行。除非有明确要求，你无须修改任何已给出的代码。以<strong>‘练习’</strong>开始的标题表示接下来的代码部分中有你必须要实现的功能。每一部分都会有详细的指导，需要实现的部分也会在注释中以’TODO’标出。请仔细阅读所有的提示！</p>
+<p>除了实现代码外，你还必须回答一些与项目和你的实现有关的问题。每一个需要你回答的问题都会以<strong>‘问题 X’</strong>为标题。请仔细阅读每个问题，并且在问题后的<strong>‘回答’</strong>文字框中写出完整的答案。我们将根据你对问题的回答和撰写代码所实现的功能来对你提交的项目进行评分。</p>
+<blockquote>
+<p><strong>提示：</strong>Code 和 Markdown 区域可通过<strong>Shift + Enter</strong>快捷键运行。此外，Markdown可以通过双击进入编辑模式。</p>
+</blockquote>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>在这个项目中，你将使用1994年美国人口普查收集的数据，选用几个监督学习算法以准确地建模被调查者的收入。然后，你将根据初步结果从中选择出最佳的候选算法，并进一步优化该算法以最好地建模这些数据。你的目标是建立一个能够准确地预测被调查者年收入是否超过50000美元的模型。这种类型的任务会出现在那些依赖于捐款而存在的非营利性组织。了解人群的收入情况可以帮助一个非营利性的机构更好地了解他们要多大的捐赠，或是否他们应该接触这些人。虽然我们很难直接从公开的资源中推断出一个人的一般收入阶层，但是我们可以（也正是我们将要做的）从其他的一些公开的可获得的资源中获得一些特征从而推断出该值。</p>
+<p>这个项目的数据集来自<a href="https://archive.ics.uci.edu/ml/datasets/Census+Income" target="_blank" rel="external">UCI机器学习知识库</a>。这个数据集是由Ron Kohavi和Barry Becker在发表文章<em>“Scaling Up the Accuracy of Naive-Bayes Classifiers: A Decision-Tree Hybrid”</em>之后捐赠的，你可以在Ron Kohavi提供的<a href="https://www.aaai.org/Papers/KDD/1996/KDD96-033.pdf" target="_blank" rel="external">在线版本</a>中找到这个文章。我们在这里探索的数据集相比于原有的数据集有一些小小的改变，比如说移除了特征<code>&#39;fnlwgt&#39;</code> 以及一些遗失的或者是格式不正确的记录。</p>
+<hr>
+<h2 id="探索数据"><a href="#探索数据" class="headerlink" title="探索数据"></a>探索数据</h2><p>运行下面的代码单元以载入需要的Python库并导入人口普查数据。注意数据集的最后一列<code>&#39;income&#39;</code>将是我们需要预测的列（表示被调查者的年收入会大于或者是最多50,000美元），人口普查数据中的每一列都将是关于被调查者的特征。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 为这个项目导入需要的库</span></div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">from</span> time <span class="keyword">import</span> time</div><div class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> display <span class="comment"># 允许为DataFrame使用display()</span></div><div class="line"></div><div class="line"><span class="comment"># 导入附加的可视化代码visuals.py</span></div><div class="line"><span class="keyword">import</span> visuals <span class="keyword">as</span> vs</div><div class="line"></div><div class="line"><span class="comment"># 为notebook提供更加漂亮的可视化</span></div><div class="line">%matplotlib inline</div><div class="line"></div><div class="line"><span class="comment"># 导入人口普查数据</span></div><div class="line">data = pd.read_csv(<span class="string">"census.csv"</span>)</div><div class="line"></div><div class="line"><span class="comment"># 成功 - 显示第一条记录</span></div><div class="line">display(data.head(n=<span class="number">1</span>))</div></pre></td></tr></table></figure>
+<div><br><style><br>    .dataframe thead tr:only-child th {<br>        text-align: right;<br>    }<br><br>    .dataframe thead th {<br>        text-align: left;<br>    }<br><br>    .dataframe tbody tr th {<br>        vertical-align: top;<br>    }<br></style><br><table border="1" class="dataframe"><br>  <thead><br>    <tr style="text-align: right;"><br>      <th></th><br>      <th>age</th><br>      <th>workclass</th><br>      <th>education_level</th><br>      <th>education-num</th><br>      <th>marital-status</th><br>      <th>occupation</th><br>      <th>relationship</th><br>      <th>race</th><br>      <th>sex</th><br>      <th>capital-gain</th><br>      <th>capital-loss</th><br>      <th>hours-per-week</th><br>      <th>native-country</th><br>      <th>income</th><br>    </tr><br>  </thead><br>  <tbody><br>    <tr><br>      <th>0</th><br>      <td>39</td><br>      <td>State-gov</td><br>      <td>Bachelors</td><br>      <td>13.0</td><br>      <td>Never-married</td><br>      <td>Adm-clerical</td><br>      <td>Not-in-family</td><br>      <td>White</td><br>      <td>Male</td><br>      <td>2174.0</td><br>      <td>0.0</td><br>      <td>40.0</td><br>      <td>United-States</td><br>      <td>&lt;=50K</td><br>    </tr><br>  </tbody><br></table><br></div>
+
+
+<h3 id="练习：数据探索"><a href="#练习：数据探索" class="headerlink" title="练习：数据探索"></a>练习：数据探索</h3><p>首先我们对数据集进行一个粗略的探索，我们将看看每一个类别里会有多少被调查者？并且告诉我们这些里面多大比例是年收入大于50,000美元的。在下面的代码单元中，你将需要计算以下量：</p>
+<ul>
+<li>总的记录数量，<code>&#39;n_records&#39;</code></li>
+<li>年收入大于50,000美元的人数，<code>&#39;n_greater_50k&#39;</code>.</li>
+<li>年收入最多为50,000美元的人数 <code>&#39;n_at_most_50k&#39;</code>.</li>
+<li>年收入大于50,000美元的人所占的比例， <code>&#39;greater_percent&#39;</code>.</li>
+</ul>
+<p><strong>提示：</strong> 您可能需要查看上面的生成的表，以了解<code>&#39;income&#39;</code>条目的格式是什么样的。 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># TODO：总的记录数</span></div><div class="line">n_records = data.shape[<span class="number">0</span>]</div><div class="line"></div><div class="line"><span class="comment"># TODO：被调查者的收入大于$50,000的人数</span></div><div class="line">n_greater_50k = data[data.income.str.contains(<span class="string">'&gt;50K'</span>)].shape[<span class="number">0</span>]</div><div class="line"></div><div class="line"><span class="comment"># TODO：被调查者的收入最多为$50,000的人数</span></div><div class="line">n_at_most_50k = data[data.income.str.contains(<span class="string">'&lt;=50K'</span>)].shape[<span class="number">0</span>]</div><div class="line"></div><div class="line"><span class="comment"># TODO：被调查者收入大于$50,000所占的比例</span></div><div class="line">greater_percent = np.divide(n_greater_50k, float(n_records)) * <span class="number">100</span></div><div class="line"></div><div class="line"><span class="comment"># 打印结果</span></div><div class="line"><span class="keyword">print</span> <span class="string">"Total number of records: &#123;&#125;"</span>.format(n_records)</div><div class="line"><span class="keyword">print</span> <span class="string">"Individuals making more than $50,000: &#123;&#125;"</span>.format(n_greater_50k)</div><div class="line"><span class="keyword">print</span> <span class="string">"Individuals making at most $50,000: &#123;&#125;"</span>.format(n_at_most_50k)</div><div class="line"><span class="keyword">print</span> <span class="string">"Percentage of individuals making more than $50,000: &#123;:.2f&#125;%"</span>.format(greater_percent)</div></pre></td></tr></table></figure>
+<pre><code>Total number of records: 45222
+Individuals making more than $50,000: 11208
+Individuals making at most $50,000: 34014
+Percentage of individuals making more than $50,000: 24.78%
+</code></pre><hr>
+<h2 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h2><p>在数据能够被作为输入提供给机器学习算法之前，它经常需要被清洗，格式化，和重新组织 - 这通常被叫做<strong>预处理</strong>。幸运的是，对于这个数据集，没有我们必须处理的无效或丢失的条目，然而，由于某一些特征存在的特性我们必须进行一定的调整。这个预处理都可以极大地帮助我们提升几乎所有的学习算法的结果和预测能力。</p>
+<h3 id="转换倾斜的连续特征"><a href="#转换倾斜的连续特征" class="headerlink" title="转换倾斜的连续特征"></a>转换倾斜的连续特征</h3><p>一个数据集有时可能包含至少一个靠近某个数字的特征，但有时也会有一些相对来说存在极大值或者极小值的不平凡分布的的特征。算法对这种分布的数据会十分敏感，并且如果这种数据没有能够很好地规一化处理会使得算法表现不佳。在人口普查数据集的两个特征符合这个描述：’<code>capital-gain&#39;</code>和<code>&#39;capital-loss&#39;</code>。</p>
+<p>运行下面的代码单元以创建一个关于这两个特征的条形图。请注意当前的值的范围和它们是如何分布的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 将数据切分成特征和对应的标签</span></div><div class="line">income_raw = data[<span class="string">'income'</span>]</div><div class="line">features_raw = data.drop(<span class="string">'income'</span>, axis = <span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="comment"># 可视化原来数据的倾斜的连续特征</span></div><div class="line">vs.distribution(data)</div></pre></td></tr></table></figure>
+<p><img src="https://ooo.0o0.ooo/2017/06/10/593bb5de341f5.png" alt=""></p>
+<p>对于高度倾斜分布的特征如<code>&#39;capital-gain&#39;</code>和<code>&#39;capital-loss&#39;</code>，常见的做法是对数据施加一个<a href="https://en.wikipedia.org/wiki/Data_transformation_(statistics)" target="_blank" rel="external">对数转换</a>，将数据转换成对数，这样非常大和非常小的值不会对学习算法产生负面的影响。并且使用对数变换显著降低了由于异常值所造成的数据范围异常。但是在应用这个变换时必须小心：因为0的对数是没有定义的，所以我们必须先将数据处理成一个比0稍微大一点的数以成功完成对数转换。</p>
+<p>运行下面的代码单元来执行数据的转换和可视化结果。再次，注意值的范围和它们是如何分布的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 对于倾斜的数据使用Log转换</span></div><div class="line">skewed = [<span class="string">'capital-gain'</span>, <span class="string">'capital-loss'</span>]</div><div class="line">features_raw[skewed] = data[skewed].apply(<span class="keyword">lambda</span> x: np.log(x + <span class="number">1</span>))</div><div class="line"></div><div class="line"><span class="comment"># 可视化经过log之后的数据分布</span></div><div class="line">vs.distribution(features_raw, transformed = <span class="keyword">True</span>)</div></pre></td></tr></table></figure>
+<p><img src="https://ooo.0o0.ooo/2017/06/10/593bb6fc3d3f7.png" alt="png"></p>
+<h3 id="规一化数字特征"><a href="#规一化数字特征" class="headerlink" title="规一化数字特征"></a>规一化数字特征</h3><p>除了对于高度倾斜的特征施加转换，对数值特征施加一些形式的缩放通常会是一个好的习惯。在数据上面施加一个缩放并不会改变数据分布的形式（比如上面说的’capital-gain’ or ‘capital-loss’）；但是，规一化保证了每一个特征在使用监督学习器的时候能够被平等的对待。注意一旦使用了缩放，观察数据的原始形式不再具有它本来的意义了，就像下面的例子展示的。</p>
+<p>运行下面的代码单元来规一化每一个数字特征。我们将使用<a href="http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html" target="_blank" rel="external"><code>sklearn.preprocessing.MinMaxScaler</code></a>来完成这个任务。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 导入sklearn.preprocessing.StandardScaler</span></div><div class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> MinMaxScaler</div><div class="line"></div><div class="line"><span class="comment"># 初始化一个 scaler，并将它施加到特征上</span></div><div class="line">scaler = MinMaxScaler()</div><div class="line">numerical = [<span class="string">'age'</span>, <span class="string">'education-num'</span>, <span class="string">'capital-gain'</span>, <span class="string">'capital-loss'</span>, <span class="string">'hours-per-week'</span>]</div><div class="line">features_raw[numerical] = scaler.fit_transform(data[numerical])</div><div class="line"></div><div class="line"><span class="comment"># 显示一个经过缩放的样例记录</span></div><div class="line">display(features_raw.head(n = <span class="number">1</span>))</div></pre></td></tr></table></figure>
+<div><br><style><br>    .dataframe thead tr:only-child th {<br>        text-align: right;<br>    }<br><br>    .dataframe thead th {<br>        text-align: left;<br>    }<br><br>    .dataframe tbody tr th {<br>        vertical-align: top;<br>    }<br></style><br><table border="1" class="dataframe"><br>  <thead><br>    <tr style="text-align: right;"><br>      <th></th><br>      <th>age</th><br>      <th>workclass</th><br>      <th>education_level</th><br>      <th>education-num</th><br>      <th>marital-status</th><br>      <th>occupation</th><br>      <th>relationship</th><br>      <th>race</th><br>      <th>sex</th><br>      <th>capital-gain</th><br>      <th>capital-loss</th><br>      <th>hours-per-week</th><br>      <th>native-country</th><br>    </tr><br>  </thead><br>  <tbody><br>    <tr><br>      <th>0</th><br>      <td>0.30137</td><br>      <td>State-gov</td><br>      <td>Bachelors</td><br>      <td>0.8</td><br>      <td>Never-married</td><br>      <td>Adm-clerical</td><br>      <td>Not-in-family</td><br>      <td>White</td><br>      <td>Male</td><br>      <td>0.02174</td><br>      <td>0.0</td><br>      <td>0.397959</td><br>      <td>United-States</td><br>    </tr><br>  </tbody><br></table><br></div>
+
+
+<h3 id="练习：数据预处理"><a href="#练习：数据预处理" class="headerlink" title="练习：数据预处理"></a>练习：数据预处理</h3><p>从上面的<strong>数据探索</strong>中的表中，我们可以看到有几个属性的每一条记录都是非数字的。通常情况下，学习算法期望输入是数字的，这要求非数字的特征（称为类别变量）被转换。转换类别变量的一种流行的方法是使用<strong>独热编码</strong>方案。独热编码为每一个非数字特征的每一个可能的类别创建一个<em>“虚拟”</em>变量。例如，假设<code>someFeature</code>有三个可能的取值<code>A</code>，<code>B</code>或者<code>C</code>，。我们将把这个特征编码成<code>someFeature_A</code>, <code>someFeature_B</code>和<code>someFeature_C</code>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">一些特征</th>
+<th></th>
+<th style="text-align:center">特征_A</th>
+<th style="text-align:center">特征_B</th>
+<th style="text-align:center">特征_C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">B</td>
+<td></td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">C</td>
+<td>—-&gt; 独热编码 —-&gt;</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">A</td>
+<td></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<p>此外，对于非数字的特征，我们需要将非数字的标签<code>&#39;income&#39;</code>转换成数值以保证学习算法能够正常工作。因为这个标签只有两种可能的类别（”&lt;=50K”和”&gt;50K”），我们不必要使用独热编码，可以直接将他们编码分别成两个类<code>0</code>和<code>1</code>，在下面的代码单元中你将实现以下功能：</p>
+<ul>
+<li>使用<a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.get_dummies.html?highlight=get_dummies#pandas.get_dummies" target="_blank" rel="external"><code>pandas.get_dummies()</code></a>对<code>&#39;features_raw&#39;</code>数据来施加一个独热编码。</li>
+<li>将目标标签<code>&#39;income_raw&#39;</code>转换成数字项。<ul>
+<li>将”&lt;=50K”转换成<code>0</code>；将”&gt;50K”转换成<code>1</code>。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># TODO：使用pandas.get_dummies()对'features_raw'数据进行独热编码</span></div><div class="line">features = pd.get_dummies(features_raw)</div><div class="line"></div><div class="line"><span class="comment"># TODO：将'income_raw'编码成数字值</span></div><div class="line">income = income_raw.replace([<span class="string">'&gt;50K'</span>, <span class="string">'&lt;=50K'</span>], [<span class="number">1</span>, <span class="number">0</span>])</div><div class="line"></div><div class="line"><span class="comment"># 打印经过独热编码之后的特征数量</span></div><div class="line">encoded = list(features.columns)</div><div class="line"><span class="keyword">print</span> <span class="string">"&#123;&#125; total features after one-hot encoding."</span>.format(len(encoded))</div><div class="line"></div><div class="line"><span class="comment"># 移除下面一行的注释以观察编码的特征名字</span></div><div class="line"><span class="comment"># print encoded</span></div></pre></td></tr></table></figure>
+<pre><code>103 total features after one-hot encoding.
+</code></pre><h3 id="混洗和切分数据"><a href="#混洗和切分数据" class="headerlink" title="混洗和切分数据"></a>混洗和切分数据</h3><p>现在所有的 <em>类别变量</em> 已被转换成数值特征，而且所有的数值特征已被规一化。和我们一般情况下做的一样，我们现在将数据（包括特征和它们的标签）切分成训练和测试集。其中80%的数据将用于训练和20%的数据用于测试。</p>
+<p>运行下面的代码单元来完成切分。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 导入 train_test_split</span></div><div class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</div><div class="line"></div><div class="line"><span class="comment"># 将'features'和'income'数据切分成训练集和测试集</span></div><div class="line">X_train, X_test, y_train, y_test = train_test_split(features, income, test_size = <span class="number">0.2</span>, random_state = <span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="comment"># 显示切分的结果</span></div><div class="line"><span class="keyword">print</span> <span class="string">"Training set has &#123;&#125; samples."</span>.format(X_train.shape[<span class="number">0</span>])</div><div class="line"><span class="keyword">print</span> <span class="string">"Testing set has &#123;&#125; samples."</span>.format(X_test.shape[<span class="number">0</span>])</div></pre></td></tr></table></figure>
+<pre><code>Training set has 36177 samples.
+Testing set has 9045 samples.
+</code></pre><hr>
+<h2 id="评价模型性能"><a href="#评价模型性能" class="headerlink" title="评价模型性能"></a>评价模型性能</h2><p>在这一部分中，我们将尝试四种不同的算法，并确定哪一个能够最好地建模数据。这里面的三个将是你选择的监督学习器，而第四种算法被称为一个<em>朴素的预测器</em>。</p>
+<h3 id="评价方法和朴素的预测器"><a href="#评价方法和朴素的预测器" class="headerlink" title="评价方法和朴素的预测器"></a>评价方法和朴素的预测器</h3><p><em>CharityML</em>通过他们的研究人员知道被调查者的年收入大于\$50,000最有可能向他们捐款。因为这个原因<em>CharityML</em>对于准确预测谁能够获得\$50,000以上收入尤其有兴趣。这样看起来使用<strong>准确率</strong>作为评价模型的标准是合适的。另外，把<em>没有</em>收入大于\$50,000的人识别成年收入大于\$50,000对于<em>CharityML</em>来说是有害的，因为他想要找到的是有意愿捐款的用户。这样，我们期望的模型具有准确预测那些能够年收入大于\$50,000的能力比模型去<strong>查全</strong>这些被调查者<em>更重要</em>。我们能够使用<strong>F-beta score</strong>作为评价指标，这样能够同时考虑查准率和查全率：</p>
+<p>$$ F_{\beta} = (1 + \beta^2) \cdot \frac{precision \cdot recall}{\left( \beta^2 \cdot precision \right) + recall} $$</p>
+<p>尤其是，当$\beta = 0.5$的时候更多的强调查准率，这叫做<strong>F$_{0.5}$ score</strong> （或者为了简单叫做F-score）。</p>
+<p>通过查看不同类别的数据分布（那些最多赚\$50,000和那些能够赚更多的），我们能发现：很明显的是很多的被调查者年收入没有超过\$50,000。这点会显著地影响<strong>准确率</strong>，因为我们可以简单地预测说<em>“这个人的收入没有超过\$50,000”</em>，这样我们甚至不用看数据就能做到我们的预测在一般情况下是正确的！做这样一个预测被称作是<strong>朴素的</strong>，因为我们没有任何信息去证实这种说法。通常考虑对你的数据使用一个<em>朴素的预测器</em>是十分重要的，这样能够帮助我们建立一个模型的表现是否好的基准。那有人说，使用这样一个预测是没有意义的：如果我们预测所有人的收入都低于\$50,000，那么<em>CharityML</em>就不会有人捐款了。</p>
+<h3 id="问题-1-朴素预测器的性能"><a href="#问题-1-朴素预测器的性能" class="headerlink" title="问题 1 - 朴素预测器的性能"></a>问题 1 - 朴素预测器的性能</h3><p><em>如果我们选择一个无论什么情况都预测被调查者年收入大于\$50,000的模型，那么这个模型在这个数据集上的准确率和F-score是多少？</em><br><strong>注意：</strong> 你必须使用下面的代码单元将你的计算结果赋值给<code>&#39;accuracy&#39;</code> 和 <code>&#39;fscore&#39;</code>，这些值会在后面被使用，请注意这里不能使用scikit-learn，你需要根据公式自己实现相关计算。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># TODO： 计算准确率</span></div><div class="line">accuracy = np.divide(n_greater_50k, float(n_records))</div><div class="line"></div><div class="line"><span class="comment"># TODO： 使用上面的公式，并设置beta=0.5计算F-score</span></div><div class="line">recall = np.divide(n_greater_50k, n_greater_50k)</div><div class="line">precision = np.divide(n_greater_50k, float(n_records))</div><div class="line">fscore = (<span class="number">1</span> + np.power(<span class="number">0.5</span>, <span class="number">2</span>)) * np.multiply(precision, recall) / (np.power(<span class="number">0.5</span>, <span class="number">2</span>) * precision + recall)</div><div class="line"></div><div class="line"><span class="comment"># 打印结果</span></div><div class="line"><span class="keyword">print</span> <span class="string">"Naive Predictor: [Accuracy score: &#123;:.4f&#125;, F-score: &#123;:.4f&#125;]"</span>.format(accuracy, fscore)</div></pre></td></tr></table></figure>
+<pre><code>Naive Predictor: [Accuracy score: 0.2478, F-score: 0.2917]
+</code></pre><h3 id="监督学习模型"><a href="#监督学习模型" class="headerlink" title="监督学习模型"></a>监督学习模型</h3><p><strong>下面的监督学习模型是现在在</strong> <a href="http://scikit-learn.org/stable/supervised_learning.html" target="_blank" rel="external"><code>scikit-learn</code></a> <strong>中你能够选择的模型</strong></p>
+<ul>
+<li>高斯朴素贝叶斯 (GaussianNB)</li>
+<li>决策树</li>
+<li>集成方法 (Bagging, AdaBoost, Random Forest, Gradient Boosting)</li>
+<li>K近邻 (KNeighbors)</li>
+<li>随机梯度下降分类器 (SGDC)</li>
+<li>支撑向量机 (SVM)</li>
+<li>Logistic回归</li>
+</ul>
+<h3 id="问题-2-模型应用"><a href="#问题-2-模型应用" class="headerlink" title="问题 2 - 模型应用"></a>问题 2 - 模型应用</h3><p>列出从上面的监督学习模型中选择的三个适合我们这个问题的模型，你将在人口普查数据上测试这每个算法。对于你选择的每一个算法：</p>
+<ul>
+<li><em>描述一个该模型在真实世界的一个应用场景。（你需要为此做点研究，并给出你的引用出处）</em></li>
+<li><em>这个模型的优势是什么？他什么情况下表现最好？</em></li>
+<li><em>这个模型的缺点是什么？什么条件下它表现很差？</em></li>
+<li><em>根据我们当前数据集的特点，为什么这个模型适合这个问题。</em></li>
+</ul>
+<p><strong>回答： </strong></p>
+<h2 id="选择的算法：决策树、集成方法、支撑向量机"><a href="#选择的算法：决策树、集成方法、支撑向量机" class="headerlink" title="- 选择的算法：决策树、集成方法、支撑向量机"></a>- 选择的算法：决策树、集成方法、支撑向量机</h2><ul>
+<li><p>决策树</p>
+<ul>
+<li><p>模型在真实世界中也应用场景</p>
+<ul>
+<li><p>在金融方面使用决策树建模分析，用于评估用户的信用、贷款违约率等；在电子商务中，可以根据用户的以往的交易种类、时间、价格建立商品推荐体统等。</p>
+</li>
+<li><p>引用连接：<br><a href="https://www.ibm.com/developerworks/cn/analytics/library/ba-1507-decisiontree-algorithm/index.html" target="_blank" rel="external"><code>信贷方面的应用</code></a><br><a href="http://www.cnblogs.com/baiboy/p/ml3.html" target="_blank" rel="external"><code>电商推荐系统</code></a> </p>
+</li>
+</ul>
+</li>
+<li><p>这个模型的优势是什么？  </p>
+<ul>
+<li>决策树易于实现和理解；</li>
+<li>对于决策树，数据的准备工作一般比较简单；</li>
+<li>能够同时处理多种数据类型</li>
+<li>给定一个决策树模型，可以根据产生的决策树推出相应的逻辑表达式；</li>
+<li>通过静态测试来对模型的表现进行评价；</li>
+<li>在相对较短的时间内可以对大量的数据做出非常好的结果；</li>
+<li>决策树可以很好地扩展到大型数据中，同时决策树的大小独立于数据库的大小；</li>
+<li>计算复杂度相对较低，结果的输出易于理解，对部分的数据缺失不敏感。</li>
+</ul>
+</li>
+<li><p>他什么情况下表现最好？</p>
+<ul>
+<li>实例是由“属性-值”对表示的；</li>
+<li>目标函数具有离散的输出值；</li>
+<li>训练数据集包含部分错误(决策树对错误有适应性)；</li>
+<li>训练数据缺少少量属性的实例。</li>
+</ul>
+</li>
+<li><p>这个模型的缺点是什么？</p>
+<ul>
+<li>易于出现过拟合问题；</li>
+<li>忽略了数据集中属性之间的相关性；</li>
+<li>对于类比不一致的样本，决策树的信息增益倾向于那些数据值较多的特征</li>
+</ul>
+</li>
+<li><p>什么条件下它表现很差？</p>
+<ul>
+<li>决策树匹配的数据过多时；</li>
+<li>分类的类别过于复杂；</li>
+<li>数据的属性之间具有非常强的关联。</li>
+</ul>
+</li>
+<li><p>根据我们当前数据集的特点，为什么这个模型适合这个问题。</p>
+<ul>
+<li>不需要准备太多的训练数据，不需要对数据过多的处理如删除空白值等；</li>
+<li>易于编码；</li>
+<li>该问题是非线性问题，决策树能够很好地解决非线性问题；</li>
+<li>算法的执行效率高，对机器的要求较小。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>支撑向量机</p>
+<ul>
+<li>模型在真实世界中也应用场景<ul>
+<li>支撑向量机用于文本和超文本的分类；</li>
+<li>用于图像分类；</li>
+<li>用于手写体识别；</li>
+<li>Kecman, Vojislav; Learning and Soft Computing — Support Vector Machines, Neural Networks, Fuzzy Logic Systems, The MIT Press, Cambridge, MA, 2001.</li>
+<li>Barghout, Lauren. “Spatial-Taxon Information Granules as Used in Iterative Fuzzy-Decision-Making for Image Segmentation.” Granular Computing and Decision-Making. Springer International Publishing, 2015. 285-318.  </li>
+</ul>
+</li>
+<li><p>这个模型的优势是什么？</p>
+<ul>
+<li>分类效果好；</li>
+<li>可以有效地处理高维空间的数据；</li>
+<li>可以有效地处理变量个数大于样本个数的数据；</li>
+<li>只是使用了一部分子集来进行训练模型，所以SVM模型不需要太大的内存；</li>
+<li>可以提高泛化能力；  </li>
+<li>无局部极小值问题；</li>
+</ul>
+</li>
+<li><p>他什么情况下表现最好？</p>
+<ul>
+<li>数据的维度较高；</li>
+<li>需要模型具有非常强的泛化能力；</li>
+<li>样本数据量较小时；</li>
+<li>解决非线性问题；   </li>
+</ul>
+</li>
+<li><p>这个模型的缺点是什么？</p>
+<ul>
+<li>无法处理大规模的数据集，因为该算法需要较长的训练时间；</li>
+<li>无法有效地处理包含噪声太多的数据集；</li>
+<li>SVM模型没有直接给出概率的估计值，而是利用交叉验证的方式估计，这种方式耗时较长；</li>
+<li>对缺失数据非常敏感；</li>
+<li>对于非线性问题，有时很难找到一个合适的核函数。</li>
+</ul>
+</li>
+<li><p>什么条件下它表现很差？</p>
+<ul>
+<li>数据集的数据量过大；</li>
+<li>数据集中的含有噪声；</li>
+<li>数据集中的缺失较多的数据；</li>
+<li>对算法的训练效率要求较高；  </li>
+</ul>
+</li>
+<li>根据我们当前数据集的特点，为什么这个模型适合这个问题。<ul>
+<li>该项目所提供的样本数据相对较少；</li>
+<li>该问题是属于非线性问题；</li>
+<li>数据集经过“独热编码”后，维度较高；</li>
+<li>SVM可以指定不同的核函数，用于提高分类器的准确性。       </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>集成方法（AdaBoost）<ul>
+<li>模型在真实世界中也应用场景<ul>
+<li>用于二分类或多分类问题；</li>
+<li>用于特征选择；</li>
+<li>多标签问题；</li>
+<li>回归问题；<br><a href="http://baike.baidu.com/item/adaboost" target="_blank" rel="external"><code>引用</code></a></li>
+</ul>
+</li>
+<li>这个模型的优势是什么？<ul>
+<li>AdaBoost是一种精度非常高的分类器；</li>
+<li>可以与各种方法构建子分类器，AdaBoost算法提供一种计算框架；</li>
+<li>弱分类器的构造方法比较简单；</li>
+<li>算法易于理解，不用做特征筛选；</li>
+<li>不易发生过拟合。</li>
+<li>易于编码；</li>
+</ul>
+</li>
+<li>他什么情况下表现最好？<ul>
+<li>用于解决二分类问题；</li>
+<li>解决大类单标签问题；</li>
+<li>处理多类单标签问题；</li>
+<li>处理回归相关的问题。</li>
+</ul>
+</li>
+<li>这个模型的缺点是什么？<ul>
+<li>AdaBoost算法的迭代次数不好设定，需要使用交叉验证的方式来进行确定；</li>
+<li>数据集的不平衡分布导致分类器的分类精度下降；</li>
+<li>训练比较耗费时间；</li>
+<li>对异常值比较敏感；</li>
+</ul>
+</li>
+<li>什么条件下它表现很差？<ul>
+<li>数据集分布非常不均匀；</li>
+<li>数据集中含有较多的异常值；</li>
+<li>对算法的训练的效率要求较高；</li>
+</ul>
+</li>
+<li>根据我们当前数据集的特点，为什么这个模型适合这个问题。<ul>
+<li>该数据集可以归属为多标签分类问题；</li>
+<li>数据集中异常值较少；</li>
+<li>对算法模型的准确率要就较高；</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="练习-创建一个训练和预测的流水线"><a href="#练习-创建一个训练和预测的流水线" class="headerlink" title="练习 - 创建一个训练和预测的流水线"></a>练习 - 创建一个训练和预测的流水线</h3><p>为了正确评估你选择的每一个模型的性能，创建一个能够帮助你快速有效地使用不同大小的训练集并在测试集上做预测的训练和测试的流水线是十分重要的。<br>你在这里实现的功能将会在接下来的部分中被用到。在下面的代码单元中，你将实现以下功能：</p>
+<ul>
+<li>从<a href="http://scikit-learn.org/stable/modules/classes.html#sklearn-metrics-metrics" target="_blank" rel="external"><code>sklearn.metrics</code></a>中导入<code>fbeta_score</code>和<code>accuracy_score</code>。</li>
+<li>用样例训练集拟合学习器，并记录训练时间。</li>
+<li>用学习器来对训练集进行预测并记录预测时间。</li>
+<li>在最前面的300个<em>训练数据</em>上做预测。</li>
+<li>计算训练数据和测试数据的准确率。</li>
+<li>计算训练数据和测试数据的F-score。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># TODO：从sklearn中导入两个评价指标 - fbeta_score和accuracy_score</span></div><div class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> fbeta_score, accuracy_score</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">train_predict</span><span class="params">(learner, sample_size, X_train, y_train, X_test, y_test)</span>:</span> </div><div class="line">    <span class="string">'''</span></div><div class="line">    inputs:</div><div class="line">       - learner: the learning algorithm to be trained and predicted on</div><div class="line">       - sample_size: the size of samples (number) to be drawn from training set</div><div class="line">       - X_train: features training set</div><div class="line">       - y_train: income training set</div><div class="line">       - X_test: features testing set</div><div class="line">       - y_test: income testing set</div><div class="line">    '''</div><div class="line">    </div><div class="line">    results = &#123;&#125;</div><div class="line">    </div><div class="line">    <span class="comment"># TODO：使用sample_size大小的训练数据来拟合学习器</span></div><div class="line">    <span class="comment"># <span class="doctag">TODO:</span> Fit the learner to the training data using slicing with 'sample_size'</span></div><div class="line">    start = time() <span class="comment"># 获得程序开始时间</span></div><div class="line">    learner = learner.fit(X_train[: sample_size], y_train[: sample_size])</div><div class="line">    end = time() <span class="comment"># 获得程序结束时间</span></div><div class="line">    </div><div class="line">    <span class="comment"># TODO：计算训练时间</span></div><div class="line">    results[<span class="string">'train_time'</span>] = end - start</div><div class="line">    </div><div class="line">    <span class="comment"># <span class="doctag">TODO:</span> 得到在测试集上的预测值</span></div><div class="line">    <span class="comment">#       然后得到对前300个训练数据的预测结果</span></div><div class="line">    start = time() <span class="comment"># 获得程序开始时间</span></div><div class="line">    predictions_test = learner.predict(X_test)</div><div class="line">    predictions_train = learner.predict(X_train[: <span class="number">300</span>])</div><div class="line">    end = time() <span class="comment"># 获得程序结束时间</span></div><div class="line">    </div><div class="line">    <span class="comment"># TODO：计算预测用时</span></div><div class="line">    results[<span class="string">'pred_time'</span>] = end - start</div><div class="line">            </div><div class="line">    <span class="comment"># TODO：计算在最前面的300个训练数据的准确率</span></div><div class="line">    results[<span class="string">'acc_train'</span>] = accuracy_score(y_train[: <span class="number">300</span>], predictions_train)</div><div class="line">        </div><div class="line">    <span class="comment"># TODO：计算在测试集上的准确率</span></div><div class="line">    results[<span class="string">'acc_test'</span>] = accuracy_score(y_test, predictions_test)</div><div class="line">    </div><div class="line">    <span class="comment"># TODO：计算在最前面300个训练数据上的F-score</span></div><div class="line">    results[<span class="string">'f_train'</span>] = fbeta_score(y_train[: <span class="number">300</span>], predictions_train, beta=<span class="number">0.5</span>)</div><div class="line">        </div><div class="line">    <span class="comment"># TODO：计算测试集上的F-score</span></div><div class="line">    results[<span class="string">'f_test'</span>] = fbeta_score(y_test, predictions_test, beta=<span class="number">0.5</span>)</div><div class="line">       </div><div class="line">    <span class="comment"># 成功</span></div><div class="line">    <span class="keyword">print</span> <span class="string">"&#123;&#125; trained on &#123;&#125; samples."</span>.format(learner.__class__.__name__, sample_size)</div><div class="line">        </div><div class="line">    <span class="comment"># 返回结果</span></div><div class="line">    <span class="keyword">return</span> results</div></pre></td></tr></table></figure>
+<h3 id="练习：初始模型的评估"><a href="#练习：初始模型的评估" class="headerlink" title="练习：初始模型的评估"></a>练习：初始模型的评估</h3><p>在下面的代码单元中，您将需要实现以下功能：             </p>
+<ul>
+<li>导入你在前面讨论的三个监督学习模型。             </li>
+<li>初始化三个模型并存储在<code>&#39;clf_A&#39;</code>，<code>&#39;clf_B&#39;</code>和<code>&#39;clf_C&#39;</code>中。         <ul>
+<li>如果可能对每一个模型都设置一个<code>random_state</code>。       </li>
+<li><strong>注意：</strong>这里先使用每一个模型的默认参数，在接下来的部分中你将需要对某一个模型的参数进行调整。             </li>
+</ul>
+</li>
+<li>计算记录的数目等于1%，10%，和100%的训练数据，并将这些值存储在<code>&#39;samples&#39;</code>中             </li>
+</ul>
+<p><strong>注意：</strong>取决于你选择的算法，下面实现的代码可能需要一些时间来运行！</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># TODO：从sklearn中导入三个监督学习模型</span></div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> tree, svm, ensemble</div><div class="line"><span class="comment"># TODO：初始化三个模型</span></div><div class="line">clf_A = tree.DecisionTreeClassifier(random_state=<span class="number">0</span>)</div><div class="line">clf_B = svm.SVC(random_state=<span class="number">0</span>)</div><div class="line">clf_C = ensemble.AdaBoostClassifier(random_state=<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="comment"># TODO：计算1%， 10%， 100%的训练数据分别对应多少点</span></div><div class="line">samples_1 = int(X_train.shape[<span class="number">0</span>] * <span class="number">0.01</span>)</div><div class="line">samples_10 = int(X_train.shape[<span class="number">0</span>] * <span class="number">0.1</span>)</div><div class="line">samples_100 = int(X_train.shape[<span class="number">0</span>] * <span class="number">1</span>)</div><div class="line"><span class="keyword">print</span> [samples_1, samples_10, samples_100]</div><div class="line"><span class="comment"># 收集学习器的结果</span></div><div class="line">results = &#123;&#125;</div><div class="line"><span class="keyword">for</span> clf <span class="keyword">in</span> [clf_A, clf_B, clf_C]:</div><div class="line">    clf_name = clf.__class__.__name__</div><div class="line">    results[clf_name] = &#123;&#125;</div><div class="line">    <span class="keyword">for</span> i, samples <span class="keyword">in</span> enumerate([samples_1, samples_10, samples_100]):</div><div class="line">        results[clf_name][i] = \</div><div class="line">        train_predict(clf, samples, X_train, y_train, X_test, y_test)</div><div class="line"></div><div class="line"><span class="comment"># 对选择的三个模型得到的评价结果进行可视化</span></div><div class="line">vs.evaluate(results, accuracy, fscore)</div></pre></td></tr></table></figure>
+<pre><code>[361, 3617, 36177]
+DecisionTreeClassifier trained on 361 samples.
+DecisionTreeClassifier trained on 3617 samples.
+DecisionTreeClassifier trained on 36177 samples.
+
+
+/Users/shahao/anaconda/lib/python2.7/site-packages/sklearn/metrics/classification.py:1113: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  &apos;precision&apos;, &apos;predicted&apos;, average, warn_for)
+
+
+SVC trained on 361 samples.
+SVC trained on 3617 samples.
+SVC trained on 36177 samples.
+AdaBoostClassifier trained on 361 samples.
+AdaBoostClassifier trained on 3617 samples.
+AdaBoostClassifier trained on 36177 samples.
+</code></pre><p><img src="https://ooo.0o0.ooo/2017/06/10/593bb73fcb75e.png" alt="png"></p>
+<hr>
+<h2 id="提高效果"><a href="#提高效果" class="headerlink" title="提高效果"></a>提高效果</h2><p>在这最后一节中，您将从三个有监督的学习模型中选择<em>最好的</em>模型来使用学生数据。你将在整个训练集（<code>X_train</code>和<code>y_train</code>）上通过使用网格搜索优化至少调节一个参数以获得一个比没有调节之前更好的F-score。</p>
+<h3 id="问题-3-选择最佳的模型"><a href="#问题-3-选择最佳的模型" class="headerlink" title="问题 3 - 选择最佳的模型"></a>问题 3 - 选择最佳的模型</h3><p><em>基于你前面做的评价，用一到两段向</em>CharityML<em>解释这三个模型中哪一个对于判断被调查者的年收入大于\$50,000是最合适的。</em><br><strong>提示：</strong>你的答案应该包括关于评价指标，预测/训练时间，以及该算法是否适合这里的数据的讨论。</p>
+<p><strong>回答：</strong></p>
+<p>通过上面的运算结果表明，AdaBoost算法的比较适用于判断被调查者的年收入。</p>
+<ol>
+<li>在训练训集上，虽然决策树的表现比较好，是因为训练时用到了测试所使用的数据，在测试集上决策树的表现明显不如AdaBoost和SVM，SVM和AdaBoost在使用accuracy_score和fbeta_score时的表现，AdaBoost相对来说效果要好一些。</li>
+<li>训练和预测时间，决策树和AdaBoost相差不大，但是svm使用的时间过长。</li>
+<li>数据集属于多标签问题，比较易于使用AdaBoost来进行处理。  </li>
+</ol>
+<p>因此使用AdaBoost可以取得跟好的预测结果。</p>
+<h3 id="问题-4-用通俗的话解释模型"><a href="#问题-4-用通俗的话解释模型" class="headerlink" title="问题 4 - 用通俗的话解释模型"></a>问题 4 - 用通俗的话解释模型</h3><p><em>用一到两段话，向</em>CharityML<em>用外行也听得懂的话来解释最终模型是如何工作的。你需要解释所选模型的主要特点。例如，这个模型是怎样被训练的，它又是如何做出预测的。避免使用高级的数学或技术术语，不要使用公式或特定的算法名词。</em></p>
+<p><strong>回答： </strong><br>AdaBoost(Adaptive Boost)是一种自适应的学习算法，该算法在前一个基本分类器分错的样本会得到加权，加权后的全体样本再次被用来训练下一个基本分类器。同时，每一轮中都会加入一个新的弱分类器，直到该算法的效果达到某个预定的足够小的错误或达到预先指定的最大的迭代次数。</p>
+<p>算法步骤：</p>
+<pre><code>1. 初始化训练数据的权值分布。如果有N个样本，每一个样本开始时被赋相同的权值：1/N。
+2. 训练弱分类器。训练过程中，假如某个样本点已经被准确的分类，那么构造下一个训练集时，该数据的权值会被降低；相反，某个样本点没有被准确的分类，那么该数据的权值就会增加。然后将权值更新后的样本数据用于训练下一个分类器，整个的训练过程将会如此的迭代下去。
+3. 将各个训练获得的弱分类器组合成强分类器。各个弱分类器的训练过程结束后，加大分类误差率小的弱分类器的权重，是该分类器最终的分类函数中起到较大的作用，降低误差率较大的弱分类器的权重，使其在最终的分类器占得权重较小。
+</code></pre><h3 id="练习：模型调优"><a href="#练习：模型调优" class="headerlink" title="练习：模型调优"></a>练习：模型调优</h3><p>调节选择的模型的参数。使用网格搜索（GridSearchCV）来至少调整模型的重要参数（至少调整一个），这个参数至少需给出并尝试3个不同的值。你要使用整个训练集来完成这个过程。在接下来的代码单元中，你需要实现以下功能：</p>
+<ul>
+<li>导入<a href="http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html" target="_blank" rel="external"><code>sklearn.model_selection.GridSearchCV</code></a>和<a href="http://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html" target="_blank" rel="external"><code>sklearn.metrics.make_scorer</code></a>.</li>
+<li>初始化你选择的分类器，并将其存储在<code>clf</code>中。<ul>
+<li>如果能够设置的话，设置<code>random_state</code>。</li>
+</ul>
+</li>
+<li>创建一个对于这个模型你希望调整参数的字典。<ul>
+<li>例如: parameters = {‘parameter’ : [list of values]}。</li>
+<li><strong>注意：</strong> 如果你的学习器（learner）有 <code>max_features</code> 参数，请不要调节它！</li>
+</ul>
+</li>
+<li>使用<code>make_scorer</code>来创建一个<code>fbeta_score</code>评分对象（设置$\beta = 0.5$）。</li>
+<li>在分类器clf上用’scorer’作为评价函数运行网格搜索，并将结果存储在grid_obj中。</li>
+<li>用训练集（X_train, y_train）训练grid search object,并将结果存储在<code>grid_fit</code>中。</li>
+</ul>
+<p><strong>注意：</strong> 取决于你选择的参数列表，下面实现的代码可能需要花一些时间运行！</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># TODO：导入'GridSearchCV', 'make_scorer'和其他一些需要的库</span></div><div class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV, KFold</div><div class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> make_scorer</div><div class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> AdaBoostClassifier</div><div class="line"></div><div class="line"><span class="comment"># TODO：初始化分类器</span></div><div class="line">clf = AdaBoostClassifier(random_state=<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="comment"># TODO：创建你希望调节的参数列表</span></div><div class="line">parameters = &#123;<span class="string">'n_estimators'</span>: [<span class="number">50</span>, <span class="number">100</span>, <span class="number">200</span>]&#125;</div><div class="line"></div><div class="line"><span class="comment"># TODO：创建一个fbeta_score打分对象</span></div><div class="line">scorer = make_scorer(fbeta_score, beta=<span class="number">0.5</span>)</div><div class="line"></div><div class="line"><span class="comment"># TODO：在分类器上使用网格搜索，使用'scorer'作为评价函数</span></div><div class="line">kfold = KFold(n_splits=<span class="number">10</span>)</div><div class="line">grid_obj = GridSearchCV(clf, parameters, scorer, cv=kfold)</div><div class="line"></div><div class="line"><span class="comment"># TODO：用训练数据拟合网格搜索对象并找到最佳参数</span></div><div class="line">grid_fit = grid_obj.fit(X_train, y_train)</div><div class="line"><span class="comment"># 得到estimator</span></div><div class="line">best_clf = grid_obj.best_estimator_</div><div class="line"></div><div class="line"><span class="comment"># 使用没有调优的模型做预测</span></div><div class="line">predictions = (clf.fit(X_train, y_train)).predict(X_test)</div><div class="line">best_predictions = best_clf.predict(X_test)</div><div class="line"></div><div class="line"><span class="comment"># 汇报调参前和调参后的分数</span></div><div class="line"><span class="keyword">print</span> <span class="string">"Unoptimized model\n------"</span></div><div class="line"><span class="keyword">print</span> <span class="string">"Accuracy score on testing data: &#123;:.4f&#125;"</span>.format(accuracy_score(y_test, predictions))</div><div class="line"><span class="keyword">print</span> <span class="string">"F-score on testing data: &#123;:.4f&#125;"</span>.format(fbeta_score(y_test, predictions, beta = <span class="number">0.5</span>))</div><div class="line"><span class="keyword">print</span> <span class="string">"\nOptimized Model\n------"</span></div><div class="line"><span class="keyword">print</span> <span class="string">"Final accuracy score on the testing data: &#123;:.4f&#125;"</span>.format(accuracy_score(y_test, best_predictions))</div><div class="line"><span class="keyword">print</span> <span class="string">"Final F-score on the testing data: &#123;:.4f&#125;"</span>.format(fbeta_score(y_test, best_predictions, beta = <span class="number">0.5</span>))</div></pre></td></tr></table></figure>
+<pre><code>Unoptimized model
+------
+Accuracy score on testing data: 0.8576
+F-score on testing data: 0.7246
+
+Optimized Model
+------
+Final accuracy score on the testing data: 0.8651
+Final F-score on the testing data: 0.7396
+</code></pre><h3 id="问题-5-最终模型评估"><a href="#问题-5-最终模型评估" class="headerlink" title="问题 5 - 最终模型评估"></a>问题 5 - 最终模型评估</h3><p><em>你的最优模型在测试数据上的准确率和F-score是多少？这些分数比没有优化的模型好还是差？你优化的结果相比于你在<strong>问题 1</strong>中得到的朴素预测器怎么样？</em><br><strong>注意：</strong>请在下面的表格中填写你的结果，然后在答案框中提供讨论。</p>
+<h4 id="结果"><a href="#结果" class="headerlink" title="结果:"></a>结果:</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">评价指标</th>
+<th style="text-align:center">基准预测器</th>
+<th style="text-align:center">未优化的模型</th>
+<th style="text-align:center">优化的模型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">准确率</td>
+<td style="text-align:center">0.2478</td>
+<td style="text-align:center">0.8576</td>
+<td style="text-align:center">0.8651</td>
+</tr>
+<tr>
+<td style="text-align:center">F-score</td>
+<td style="text-align:center">0.2917</td>
+<td style="text-align:center">0.7246</td>
+<td style="text-align:center">0.7396</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回答：</strong><br>通过对AdaBoost中的弱分类器的数量进行网格搜索和交叉验证，得出的优化后的模型要比没有基准去测器的准确率和f-score高得多，比未优化的模型也稍微高了一些。没有高出很多的原因可能是因为AbaBoost算法的自适应性已经非常强大了，增加弱学习器的数量并不能大幅度的提升算法的accuracy和f-score。</p>
+<hr>
+<h2 id="特征的重要性"><a href="#特征的重要性" class="headerlink" title="特征的重要性"></a>特征的重要性</h2><p>在数据上（比如我们这里使用的人口普查的数据）使用监督学习算法的一个重要的任务是决定哪些特征能够提供最强的预测能力。通过专注于一些少量的有效特征和标签之间的关系，我们能够更加简单地理解这些现象，这在很多情况下都是十分有用的。在这个项目的情境下这表示我们希望选择一小部分特征，这些特征能够在预测被调查者是否年收入大于\$50,000这个问题上有很强的预测能力。</p>
+<p>选择一个有<code>feature_importance_</code>属性（这是一个根据这个选择的分类器来对特征的重要性进行排序的函数）的scikit学习分类器（例如，AdaBoost，随机森林）。在下一个Python代码单元中用这个分类器拟合训练集数据并使用这个属性来决定这个人口普查数据中最重要的5个特征。</p>
+<h3 id="问题-6-观察特征相关性"><a href="#问题-6-观察特征相关性" class="headerlink" title="问题 6 - 观察特征相关性"></a>问题 6 - 观察特征相关性</h3><p>当<strong>探索数据</strong>的时候，它显示在这个人口普查数据集中每一条记录我们有十三个可用的特征。<br><em>在这十三个记录中，你认为哪五个特征对于预测是最重要的，你会怎样对他们排序？理由是什么？</em></p>
+<p><strong>回答：</strong></p>
+<ol>
+<li>education_level<br> 学位较高的人，更加容易获得高的收入；</li>
+<li>occupaiton<br> 收入与所从事的职业密切相关；</li>
+<li>hours_per_week<br> 工作时间的长短与收入是正相关的关系；</li>
+<li>age<br> 当前社会，一般来说随着年龄的增长，经验增加，收入也会越来越高；</li>
+<li>workclass<br> 工作层次相对来说也是决定收入高低的一个重要的原因。</li>
+</ol>
+<h3 id="练习-提取特征重要性"><a href="#练习-提取特征重要性" class="headerlink" title="练习 - 提取特征重要性"></a>练习 - 提取特征重要性</h3><p>选择一个<code>scikit-learn</code>中有<code>feature_importance_</code>属性的监督学习分类器，这个属性是一个在做预测的时候根据所选择的算法来对特征重要性进行排序的功能。</p>
+<p>在下面的代码单元中，你将要实现以下功能：</p>
+<ul>
+<li>如果这个模型和你前面使用的三个模型不一样的话从sklearn中导入一个监督学习模型。</li>
+<li>在整个训练集上训练一个监督学习模型。</li>
+<li>使用模型中的<code>&#39;.feature_importances_&#39;</code>提取特征的重要性。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># TODO：导入一个有'feature_importances_'的监督学习模型</span></div><div class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</div><div class="line"></div><div class="line"><span class="comment"># TODO：在训练集上训练一个监督学习模型</span></div><div class="line">model = RandomForestClassifier(random_state=<span class="number">0</span>)</div><div class="line">model.fit(X_train, y_train)</div><div class="line"></div><div class="line"><span class="comment"># TODO： 提取特征重要性</span></div><div class="line">importances = model.feature_importances_</div><div class="line">importances_AdaBoost = best_clf.feature_importances_</div><div class="line"><span class="comment"># 绘图</span></div><div class="line">vs.feature_plot(importances, X_train, y_train)</div><div class="line">vs.feature_plot(importances_AdaBoost, X_train, y_train)</div></pre></td></tr></table></figure>
+<p><img src="https://ooo.0o0.ooo/2017/06/10/593bb754af8e7.png" alt="png"></p>
+<p><img src="https://ooo.0o0.ooo/2017/06/10/593bb760bcbbd.png" alt="png"></p>
+<h3 id="问题-7-提取特征重要性"><a href="#问题-7-提取特征重要性" class="headerlink" title="问题 7 - 提取特征重要性"></a>问题 7 - 提取特征重要性</h3><p>观察上面创建的展示五个用于预测被调查者年收入是否大于\$50,000最相关的特征的可视化图像。<br><em>这五个特征和你在<strong>问题 6</strong>中讨论的特征比较怎么样？如果说你的答案和这里的相近，那么这个可视化怎样佐证了你的想法？如果你的选择不相近，那么为什么你觉得这些特征更加相关？</em></p>
+<p><strong>回答：</strong><br>与<code>问题6</code>中的答案有部分是相近的，例如：年龄、教育程度、工作时长。  </p>
+<pre><code>- 年龄：随着年龄的增长，工作经验的增加，收入自然会不断增长；
+- 教育程度：教育程度在一定的情况之下反映了工作的能力，因此也是与工作收入呈现出正相关；
+- 工作时间：工作时间越长，收入在同样的情况之下越高，这个是公认的道理，也就是“多劳多得”；
+</code></pre><hr>
+<p>在<code>问题6</code>中没有考虑到的因素有<code>capital-gain</code>和<code>capital-loss</code><br>现在开来，这来个因素先对重要的原理，可能是与美国人的投资观念有关；在中国大部分人并没有多少投资理财的观念，现在虽让比原来流行了一些，单这也是近几年才开始的，所以一开始的时候并没有过多的考虑这两项；但是从AdaBoost的标签的权重来看，这两项是非常重要的两项，国外发达国家尤其是英美等国，投资理财的观念非常强，美国投资公司发布的《2016年投资公司概况》显示，美国中高收入家庭的投资理财规模为中国同等收入家庭的40倍，美国越是经济条件好的家庭越注重投资，投资有收入当然也就会有损失，因此<code>capital-gain</code>和<code>capital-loss</code>这两项也是衡量家庭收入非常重要的因素。</p>
+<h3 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h3><p>如果我们只是用可用特征的一个子集的话模型表现会怎么样？通过使用更少的特征来训练，在评价指标的角度来看我们的期望是训练和预测的时间会更少。从上面的可视化来看，我们可以看到前五个最重要的特征贡献了数据中<strong>所有</strong>特征中超过一半的重要性。这提示我们可以尝试去<em>减小特征空间</em>，并简化模型需要学习的信息。下面代码单元将使用你前面发现的优化模型，并<em>只使用五个最重要的特征</em>在相同的训练集上训练模型。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 导入克隆模型的功能</span></div><div class="line"><span class="keyword">from</span> sklearn.base <span class="keyword">import</span> clone</div><div class="line"></div><div class="line"><span class="comment"># 减小特征空间</span></div><div class="line">X_train_reduced = X_train[X_train.columns.values[(np.argsort(importances_AdaBoost)[::<span class="number">-1</span>])[:<span class="number">5</span>]]]</div><div class="line">X_test_reduced = X_test[X_test.columns.values[(np.argsort(importances_AdaBoost)[::<span class="number">-1</span>])[:<span class="number">5</span>]]]</div><div class="line"></div><div class="line"><span class="comment"># 在前面的网格搜索的基础上训练一个“最好的”模型</span></div><div class="line">clf = (clone(best_clf)).fit(X_train_reduced, y_train)</div><div class="line"></div><div class="line"><span class="comment"># 做一个新的预测</span></div><div class="line">reduced_predictions = clf.predict(X_test_reduced)</div><div class="line"></div><div class="line"><span class="comment"># 对于每一个版本的数据汇报最终模型的分数</span></div><div class="line"><span class="keyword">print</span> <span class="string">"Final Model trained on full data\n------"</span></div><div class="line"><span class="keyword">print</span> <span class="string">"Accuracy on testing data: &#123;:.4f&#125;"</span>.format(accuracy_score(y_test, best_predictions))</div><div class="line"><span class="keyword">print</span> <span class="string">"F-score on testing data: &#123;:.4f&#125;"</span>.format(fbeta_score(y_test, best_predictions, beta = <span class="number">0.5</span>))</div><div class="line"><span class="keyword">print</span> <span class="string">"\nFinal Model trained on reduced data\n------"</span></div><div class="line"><span class="keyword">print</span> <span class="string">"Accuracy on testing data: &#123;:.4f&#125;"</span>.format(accuracy_score(y_test, reduced_predictions))</div><div class="line"><span class="keyword">print</span> <span class="string">"F-score on testing data: &#123;:.4f&#125;"</span>.format(fbeta_score(y_test, reduced_predictions, beta = <span class="number">0.5</span>))</div></pre></td></tr></table></figure>
+<pre><code>Final Model trained on full data
+------
+Accuracy on testing data: 0.8651
+F-score on testing data: 0.7396
+
+Final Model trained on reduced data
+------
+Accuracy on testing data: 0.8385
+F-score on testing data: 0.6920
+</code></pre><h3 id="问题-8-特征选择的影响"><a href="#问题-8-特征选择的影响" class="headerlink" title="问题 8 - 特征选择的影响"></a>问题 8 - 特征选择的影响</h3><p><em>最终模型在只是用五个特征的数据上和使用所有的特征数据上的F-score和准确率相比怎么样？</em><br><em>如果训练时间是一个要考虑的因素，你会考虑使用部分特征的数据作为你的训练集吗？</em></p>
+<p><strong>回答：</strong><br>使用上面的五个最为重要的个模型，会使得accuracy和f-score都略有下降。</p>
+<hr>
+<p>假如训练时间是一个非常重要的考虑的因素时，使用重要的特征进行训练可以是一个备选方案。但是，我更希望通过对数据集进行降维、选择计算复杂度更小或者增加设备的计算能力的方式来解决这个问题；当这些手段都不能使用的时候，可能才会选择这种使用部分数据集的方案。</p>
+<blockquote>
+<p><strong>注意：</strong> 当你写完了所有的代码，并且回答了所有的问题。你就可以把你的 iPython Notebook 导出成 HTML 文件。你可以在菜单栏，这样导出<strong>File -&gt; Download as -&gt; HTML (.html)</strong>把这个 HTML 和这个 iPython notebook 一起做为你的作业提交。</p>
+</blockquote>
+
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Yuyang Sha" />
+          <p class="site-author-name" itemprop="name">Yuyang Sha</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+<div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuyang Sha</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 背景动画 -->
+<!-- <script type="text/javascript" src="/js/src/particle.js"></script> -->
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/src/love.js"></script> -->
